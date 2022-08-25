@@ -19,9 +19,17 @@ namespace My_Bank.Funcionarios
         public double Salario { get; set; }
         
 
-        public double getBonificacao()
+        public virtual double getBonificacao()
         { 
             return Salario * 0.10;
+        }
+
+        public static int totaDeFuncionarios { get; private set; }
+
+        public Funcionario()
+        {
+            Console.WriteLine("Criando um Funcionario.");
+            totaDeFuncionarios++;
         }
     }
 }

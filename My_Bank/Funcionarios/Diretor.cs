@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace My_Bank.Funcionarios
 {
-    public class Diretor
+    public class Diretor: Funcionario
     {
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public double Salario { get; set; }
-
-        public double getBonificacao()
+        public override double getBonificacao()
         {
-            return Salario;
+            return Salario + base.getBonificacao();
+        }
+
+        public Diretor()
+        {
+            Console.WriteLine("Criando um Diretor.");
         }
     }
 }
