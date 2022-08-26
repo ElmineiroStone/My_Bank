@@ -13,7 +13,7 @@ namespace My_Bank.Funcionarios
             return Salario + base.getBonificacao();
         }
 
-        public Diretor()
+        public Diretor(string cpf):base(cpf)
         {
             Console.WriteLine("Criando um Diretor."); 
         }

@@ -4,19 +4,17 @@ using My_Bank.Utilitario;
 Console.WriteLine("Boas Vindas ao MyBank");
 
 GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
-Funcionario pedro = new Funcionario();
+Funcionario pedro = new Funcionario("16274839571");
 pedro.Nome = "João";
-pedro.Cpf = "26173727289";
 pedro.Salario = 2000;
 Console.WriteLine("Total de funcionarios: "+Funcionario.totaDeFuncionarios);
 
-Diretor paulo = new Diretor();
+Diretor paulo = new Diretor("26378193782");
 paulo.Nome = "Paulo Henrique";
-paulo.Cpf = "16273849938";
 paulo.Salario = 5000;
 Console.WriteLine("Total de funcionarios: " + Funcionario.totaDeFuncionarios);
 
-Funcionario andre = new Diretor();
+Funcionario andre = new Diretor("271845367928");
 andre.Nome = "André";
 andre.Salario = 3000;
 Console.WriteLine("Total de funcionarios: " + Funcionario.totaDeFuncionarios);

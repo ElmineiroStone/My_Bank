@@ -13,23 +13,20 @@ namespace My_Bank.Funcionarios
         // 2 - Design
         // n - ....
 
-
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public double Salario { get; set; }
-        
-
-        public virtual double getBonificacao()
-        { 
-            return Salario * 0.10;
-        }
-
         public static int totaDeFuncionarios { get; private set; }
 
-        public Funcionario()
+        public Funcionario(string cpf)
         {
+            Cpf = cpf;
             Console.WriteLine("Criando um Funcionario.");
             totaDeFuncionarios++;
+        }
+        public string Nome { get; set; }
+        public string Cpf { get; private set; }
+        public double Salario { get; set; }
+        public virtual double getBonificacao()
+        {
+            return Salario * 0.10;
         }
     }
 }
