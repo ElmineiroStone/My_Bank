@@ -4,27 +4,33 @@ using My_Bank.Utilitario;
 Console.WriteLine("Boas Vindas ao MyBank");
 
 GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
-Funcionario pedro = new Funcionario("16274839571");
+Funcionario pedro = new Funcionario("16274839571", 2000);
 pedro.Nome = "João";
-pedro.Salario = 2000;
 Console.WriteLine("Total de funcionarios: "+Funcionario.totaDeFuncionarios);
 
-Diretor paulo = new Diretor("26378193782");
+Diretor paulo = new Diretor("26378193782", 5000);
 paulo.Nome = "Paulo Henrique";
-paulo.Salario = 5000;
 Console.WriteLine("Total de funcionarios: " + Funcionario.totaDeFuncionarios);
 
-Funcionario andre = new Diretor("271845367928");
+Funcionario andre = new Diretor("271845367928", 3000);
 andre.Nome = "André";
-andre.Salario = 3000;
 Console.WriteLine("Total de funcionarios: " + Funcionario.totaDeFuncionarios);
 
-Console.WriteLine("bonificação: "+pedro.getBonificacao());
-Console.WriteLine("bonificação: " +paulo.getBonificacao());
+Console.WriteLine("Bonificação: "+pedro.getBonificacao());
+Console.WriteLine("Bonificação: " +paulo.getBonificacao());
+Console.WriteLine("Bonificação: " + andre.getBonificacao());
 
 gerenciador.Registrar(pedro);
 gerenciador.Registrar(paulo);
+gerenciador.Registrar(andre);
 
 Console.WriteLine("Total de bonificações: " + gerenciador.getBonificacao());
+Console.WriteLine("Total de bonificações: " + Funcionario.totaDeFuncionarios);
+
+andre.AumentarSalario();
+Console.WriteLine("Novo Salario do André: "+andre.Salario);
+
+pedro.AumentarSalario();
+Console.WriteLine("Novo Salario do Pedro: " + pedro.Salario);
 
 Console.ReadKey();
