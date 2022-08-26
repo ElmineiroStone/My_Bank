@@ -15,7 +15,7 @@ namespace My_Bank.Funcionarios
 
         public Diretor()
         {
-            Console.WriteLine("Criando um Diretor.");
+            Console.WriteLine("Criando um Diretor."); 
         }
     }
 }
