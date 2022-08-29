@@ -9,16 +9,17 @@ namespace My_Bank.Utilitario
 {
     public class GerenciadorDeBonificacao
     {
-        private double totalBonificacao;
+        private double _totalBonificacao;
 
         public void Registrar(Funcionario funcionario)
         {
-            this.totalBonificacao += funcionario.getBonificacao();
+            _totalBonificacao += funcionario.GetBonificacao();
         }
 
-        public double getBonificacao()
+        public double GetTotalBonificacao()
         {
-            return this.totalBonificacao;
+            return _totalBonificacao;
         }
+
     }
 }

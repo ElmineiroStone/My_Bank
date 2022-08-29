@@ -6,32 +6,26 @@ using System.Threading.Tasks;
 
 namespace My_Bank.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
+        public static int TotalDeFuncionarios { get; private set; }
 
         public string Nome { get; set; }
         public string CPF { get; private set; }
         public double Salario { get; protected set; }
 
-        public virtual double getBonificacao()
+        public Funcionario(double salario, string cpf)
         {
-            return Salario * 0.10;
-        }
+            Console.WriteLine("Criando FUNCIONARIO");
 
-        public static int totaDeFuncionarios { get; private set; }
-
-        public Funcionario(string cpf, double salario)
-        {
             this.CPF = cpf;
             this.Salario = salario;
 
-            Console.WriteLine("Criando um Funcionario.");
-            totaDeFuncionarios++;
+            TotalDeFuncionarios++;
         }
-        
-        public virtual void AumentarSalario()
-        {
-            this.Salario *= 1.1;
-        }
+
+        public abstract void AumentarSalario();
+
+        public abstract double GetBonificacao();
     }
 }
